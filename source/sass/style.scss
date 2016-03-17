@@ -61,7 +61,7 @@ body {
   height: 100vh;
 }
 
-.start-button {
+.button-style {
   color: #222;
   background-color: #EDF1F2;
   font-weight: bold;
@@ -74,6 +74,12 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
   outline: 0;
   cursor: pointer;
+
+  &.hidden {
+    display: none;
+    visibility: hidden;
+  }
+
 }
 
 .quiz-timer {
@@ -97,6 +103,28 @@ body {
                0 0 10px rgba(0, 255, 0, 0.8);
 
   span {
-    // padding: 0 0.1rem;
+    padding: 0 0.1rem;
+  }
+}
+
+.quiz-box {
+  background-color: #FFF;
+  width: 80%;
+  padding: 1rem;
+
+  &.hidden {
+    display: none;
+    visibility: hidden;
+  }
+
+  input {
+    display: block;
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid #000;
+  }
+
+  button {
+    float: right;
   }
 }

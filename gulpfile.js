@@ -27,6 +27,8 @@ gulp.task('compile-react', function() {
     		output: {
     			filename: 'main.js'
     		},
+        debug: true,
+        devtool: 'inline-source-map',
     		module: {
     			loaders: [
     				{

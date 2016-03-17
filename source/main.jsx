@@ -5,8 +5,8 @@ import { Router, Route, browserHistory, Redirect } from 'react-router';
 
 // Components
 import Welcome from './components/welcome-screen.jsx';
-import Begin from './components/begin-screen.jsx';
 import Timer from './components/timer.jsx';
+import Question from './components/question-screen.jsx'
 import NotFound from './components/404.jsx';
 
 var App = React.createClass({
@@ -15,8 +15,8 @@ var App = React.createClass({
       <Router history={ browserHistory }>
         <Redirect from='/' to='/welcome' />
         <Route path='/welcome' component={ Welcome }/>
-        <Route path='/begin' component={ Begin }/>
         <Route path='/timer' component={ Timer }/>
+        <Route path='/quiz' component={ Question }/>
         <Route path='*' component={ NotFound } />
       </Router>
     );
