@@ -11,9 +11,9 @@ var Timer = React.createClass({
 
   convertToSeconds: function() {
     // minuteNumber refers to a number set as a prop of Timer on question-screen.jsx
-    if ( this.props.minuteNumber >= 1 ){
+    if ( this.props.numberOfMinutes >= 1 ){
       // takes minuteNumber and converts it into a number of seconds
-      return this.props.minuteNumber * 60;
+      return this.props.numberOfMinutes * 60;
 
     } else {
       return 60;
@@ -47,7 +47,7 @@ var Timer = React.createClass({
   },
 
   componentWillReceiveProps: function(nextProps) {
-    if ( nextProps.startQuizHandler === true ) {
+    if ( nextProps.startHandler === true ) {
       this._startTimer();
     } else {
       this.componentWillUnmount();
@@ -64,9 +64,8 @@ var Timer = React.createClass({
 
   render: function(){
     return (
-      
-      <span>{ this._minutesRemaining() }:{ this._secondsRemaining() < 10 ? "0" + this._secondsRemaining() : this._secondsRemaining() }</span>
 
+      <span>{ this._minutesRemaining() }:{ this._secondsRemaining() < 10 ? "0" + this._secondsRemaining() : this._secondsRemaining() }</span>
     )
   }
 });

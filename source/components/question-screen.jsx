@@ -55,15 +55,17 @@ var Question = React.createClass({
     return (
       <div className="quiz-window">
         <div className={ "quiz-timer " + this._toggleDisplay(true) }>
-          <Timer minuteNumber={ 1 } startQuizHandler={ this.state.start } />
+          <Timer numberOfMinutes={ 1 } startHandler={ this.state.start } />
         </div>
 
         <button className={ "button-style " + this._toggleDisplay(false) } onClick={ this._startQuizHandler }>Begin Evaluation</button>
 
         <div className={ "quiz-box " + this._toggleDisplay(true) }>
-          <p>{ this._questionDisplay() }</p>
-          <input className="answer-input" type="text" ref="userInput" />
-          <button className="button-style" type="submit" onClick={ this._handleSubmit }>Submit Answer</button>
+          <form>
+            <p>{ this._questionDisplay() }</p>
+            <input className="answer-input" type="text" ref="userInput" />
+            <button className="button-style" type="submit" onClick={ this._handleSubmit }>Submit Answer</button>
+          </form>
         </div>
       </div>
     );

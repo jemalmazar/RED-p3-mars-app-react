@@ -181,11 +181,16 @@ body {
   background-color: #FFF;
   width: 80%;
   padding: 1rem; }
+  .quiz-box p {
+    font-size: 1.5rem; }
   .quiz-box input {
     display: block;
+    font-size: 1rem;
     width: 100%;
     border: 0;
-    border-bottom: 1px solid #000; }
+    border-bottom: 1px solid #000;
+    margin: 1rem 0;
+    outline: none; }
   .quiz-box button {
     float: right; }
 
