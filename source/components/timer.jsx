@@ -64,13 +64,9 @@ var Timer = React.createClass({
 
   render: function(){
     return (
-      <div className='quiz-window'>
+      
+      <span>{ this._minutesRemaining() }:{ this._secondsRemaining() < 10 ? "0" + this._secondsRemaining() : this._secondsRemaining() }</span>
 
-        <div className="quiz-timer">
-          <span>{ this._minutesRemaining() }:{ this._secondsRemaining() < 10 ? "0" + this._secondsRemaining() : this._secondsRemaining() }</span>
-        </div>
-
-      </div>
     )
   }
 });

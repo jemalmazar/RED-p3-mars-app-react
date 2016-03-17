@@ -75,11 +75,6 @@ body {
   outline: 0;
   cursor: pointer;
 
-  &.hidden {
-    display: none;
-    visibility: hidden;
-  }
-
 }
 
 .quiz-timer {
@@ -105,17 +100,14 @@ body {
   span {
     padding: 0 0.1rem;
   }
+
+
 }
 
 .quiz-box {
   background-color: #FFF;
   width: 80%;
   padding: 1rem;
-
-  &.hidden {
-    display: none;
-    visibility: hidden;
-  }
 
   input {
     display: block;
@@ -127,4 +119,9 @@ body {
   button {
     float: right;
   }
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
 }

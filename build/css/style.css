@@ -150,9 +150,6 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
   outline: 0;
   cursor: pointer; }
-  .button-style.hidden {
-    display: none;
-    visibility: hidden; }
 
 .quiz-timer {
   display: -webkit-flex;
@@ -184,9 +181,6 @@ body {
   background-color: #FFF;
   width: 80%;
   padding: 1rem; }
-  .quiz-box.hidden {
-    display: none;
-    visibility: hidden; }
   .quiz-box input {
     display: block;
     width: 100%;
@@ -194,3 +188,7 @@ body {
     border-bottom: 1px solid #000; }
   .quiz-box button {
     float: right; }
+
+.hidden {
+  display: none;
+  visibility: hidden; }
