@@ -1,4 +1,5 @@
 import React from 'react';
+import {browserHistory} from 'react-router';
 
 var Timer = React.createClass({
 
@@ -35,14 +36,14 @@ var Timer = React.createClass({
     this.setState( { secondsElapsed: this.state.secondsElapsed - 1 } );
 
     if (this.state.secondsElapsed === 0) {
-      this.componentWillUnmount();
+      browserHistory.push('/rejected');
     }
 
   },
 
   _startTimer: function() {
     if ( !this.interval ) {
-        this.interval = setInterval(this.tick, 1000);
+        this.interval = setInterval(this._tick, 1000);
     }
   },
 
@@ -50,6 +51,7 @@ var Timer = React.createClass({
     if ( nextProps.startHandler === true ) {
       this._startTimer();
     } else {
+      clearInterval(this.interval);
       this.componentWillUnmount();
     }
   },
@@ -64,8 +66,13 @@ var Timer = React.createClass({
 
   render: function(){
     return (
+      <div>
+        <span>
+          { this._minutesRemaining() }:{ this._secondsRemaining() < 10 ? "0" + this._secondsRemaining() : this._secondsRemaining() }
+        </span>
 
-      <span>{ this._minutesRemaining() }:{ this._secondsRemaining() < 10 ? "0" + this._secondsRemaining() : this._secondsRemaining() }</span>
+      </div>
+
     )
   }
 });

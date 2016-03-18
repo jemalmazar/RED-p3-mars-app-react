@@ -1,18 +1,23 @@
 import React from 'react';
+import {browserHistory} from 'react-router';
+
 import Timer from './timer.jsx'
 
 var questionList = {
     1 : {
       question: "What color is Mars?",
-      answer: "red"
+      answer: "Red"
     },
     2 : {
-      question: "What is the name of the Looney Tunes' martian?",
-      answer: "marvin"
+      question: "What is the name of the Looney Tunes martian?",
+      answer: "Marvin"
     },
     3 : {
       question: "Who is J'onn J'onzz?",
-      answer: "martian manhunter"
+      answer: "Martian Manhunter"
+    },
+    4: {
+
     }
 };
 
@@ -21,7 +26,8 @@ var Question = React.createClass({
   getInitialState: function() {
     return {
       start: false,
-      questionIndex: 1
+      questionIndex: 1,
+      correctAnswers: 0
     }
 
   },
@@ -35,7 +41,7 @@ var Question = React.createClass({
   },
 
   _startQuizHandler: function() {
-    this.setState({ start: true })
+    this.setState({ start: true });
   },
 
   _questionDisplay: function() {
@@ -47,8 +53,30 @@ var Question = React.createClass({
   _handleSubmit: function(e) {
     e.preventDefault();
     this.setState({ questionIndex: this.state.questionIndex + 1 });
-    // clears the inpur field on user submission
+    this._evaluateUserInput();
+  },
+
+  _evaluateUserInput: function() {
+    if ( this.refs.userInput.value.toLowerCase() === questionList[this.state.questionIndex].answer.toLowerCase() ) {
+      this.setState({ correctAnswers: this.state.correctAnswers + 1 })
+    };
+    // clears the input field on user submission
     this.refs.userInput.value = "";
+
+  },
+
+  _evaluateQuiz: function() {
+    if ( this.state.correctAnswers === 3 ) {
+      browserHistory.push('/accepted');
+    } else {
+      browserHistory.push('/rejected');
+    }
+  },
+
+  componentDidUpdate: function() {
+    if ( this.state.questionIndex > 3 ) {
+      this._evaluateQuiz();
+    };
   },
 
   render: function() {
@@ -63,7 +91,7 @@ var Question = React.createClass({
         <div className={ "quiz-box " + this._toggleDisplay(true) }>
           <form>
             <p>{ this._questionDisplay() }</p>
-            <input className="answer-input" type="text" ref="userInput" />
+            <input className="answer-input" type="text" placeholder="Please enter your answer" ref="userInput" autoFocus={ true }/>
             <button className="button-style" type="submit" onClick={ this._handleSubmit }>Submit Answer</button>
           </form>
         </div>
