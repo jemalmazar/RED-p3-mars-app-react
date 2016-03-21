@@ -1,3 +1,4 @@
+/*    <Import Statements>    */
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -63,6 +64,7 @@ table {
   font-weight: normal;
   font-style: normal; }
 
+/*    <Global Styles>    */
 body {
   font-family: 'Product Sans', Arial, sans-serif;
   font-size: 16px;
@@ -78,6 +80,25 @@ body {
       -ms-flex: 1 0 80%;
           flex: 1 0 80%; }
 
+.button-style {
+  color: #222;
+  background-color: #EDF1F2;
+  font-weight: bold;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  border: 2px solid #FFF;
+  border-radius: 3px;
+  padding: 1rem 3.5rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  outline: 0;
+  cursor: pointer; }
+
+.hidden {
+  display: none;
+  visibility: hidden; }
+
+/*    <Header Styles>    */
 .site-header {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -124,6 +145,7 @@ body {
     z-index: -1;
     text-shadow: 0 1px #ccc, 0 2px #b7b7b7, 0 3px #a3a3a3, 0 4px #8e8e8e, 0 5px #7a7a7a, 0 6px 1px rgba(0, 0, 0, 0.3); }
 
+/*    <Quiz Body Styles>    */
 .quiz-window {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -136,20 +158,6 @@ body {
           justify-content: center;
   background: linear-gradient(to right, #fd746c, #ff9068);
   height: 100vh; }
-
-.button-style {
-  color: #222;
-  background-color: #EDF1F2;
-  font-weight: bold;
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  border: 2px solid #FFF;
-  border-radius: 3px;
-  padding: 1rem 3.5rem;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-  outline: 0;
-  cursor: pointer; }
 
 .quiz-timer {
   display: -webkit-flex;
@@ -193,7 +201,3 @@ body {
     outline: none; }
   .quiz-box button {
     float: right; }
-
-.hidden {
-  display: none;
-  visibility: hidden; }

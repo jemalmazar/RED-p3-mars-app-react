@@ -1,0 +1,32 @@
+/*    <Global Styles>    */
+
+body {
+  font-family: 'Product Sans', Arial, sans-serif;
+  font-size: 16px;
+  display: flex;
+  flex-direction: row;
+}
+
+.mount-node {
+  flex: 1 0 80%;
+}
+
+.button-style {
+  color: #222;
+  background-color: #EDF1F2;
+  font-weight: bold;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  border: 2px solid #FFF;
+  border-radius: 3px;
+  padding: 1rem 3.5rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  outline: 0;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}

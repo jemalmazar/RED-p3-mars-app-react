@@ -1,0 +1,42 @@
+/*    <Header Styles>    */
+
+.site-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 150px;
+  flex-direction: column;
+  text-transform: uppercase;
+  position: relative;
+
+  h1 {
+    font-size: 100px;
+    font-weight: bold;
+    position: absolute;
+    color: #EDF1F2;
+    letter-spacing: -5px;
+    transform: rotate(270deg);
+    top: 100px;
+    left: -45px;
+  }
+
+  .shuttle-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fd746c;
+    color: #FFF;
+    transform: rotate(-90deg);
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    z-index: -1;
+    text-shadow: 0 1px #ccc,
+                 0 2px #b7b7b7,
+                 0 3px #a3a3a3,
+                 0 4px #8e8e8e,
+                 0 5px #7a7a7a,
+                 0 6px 1px rgba(0, 0, 0, 0.3);
+ }
+
+}
