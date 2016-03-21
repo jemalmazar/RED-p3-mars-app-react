@@ -11,7 +11,7 @@ var Welcome = React.createClass({
 
   render: function(){
     return (
-      <div className="quiz-window">
+      <div className="quiz-window welcome">
         <button className="button-style" onClick={ this._handleTakeTest }>Take Test</button>
       </div>
     )

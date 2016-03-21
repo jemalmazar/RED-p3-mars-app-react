@@ -4,8 +4,8 @@ var Accepted = React.createClass({
 
   render: function(){
     return (
-      <div className="quiz-window">
-        <p>Accepted!</p>
+      <div className="quiz-window accepted">
+        <h2>Accepted!</h2>
       </div>
     );
   }

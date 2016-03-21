@@ -3,7 +3,9 @@ import React from 'react';
 var NotFound = React.createClass({
   render: function(){
     return (
-      <div>404 Not Found</div>
+      <div className="quiz-window lost">
+        <h2>404 Not Found</h2>
+      </div>
     )
   }
 

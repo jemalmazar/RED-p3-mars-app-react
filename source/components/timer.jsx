@@ -35,7 +35,7 @@ var Timer = React.createClass({
     // takes the secondsElapsed state and decreases that number by one every time this method gets called
     this.setState( { secondsElapsed: this.state.secondsElapsed - 1 } );
 
-    if (this.state.secondsElapsed === 0) {
+    if (this.state.secondsElapsed === -1) {
       browserHistory.push('/rejected');
     }
 

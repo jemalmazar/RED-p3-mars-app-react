@@ -81,7 +81,7 @@ var Question = React.createClass({
 
   render: function() {
     return (
-      <div className="quiz-window">
+      <div className="quiz-window questions">
         <div className={ "quiz-timer " + this._toggleDisplay(true) }>
           <Timer numberOfMinutes={ 1 } startHandler={ this.state.start } />
         </div>

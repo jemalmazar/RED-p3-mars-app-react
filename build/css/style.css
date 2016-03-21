@@ -109,6 +109,7 @@ body {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: #000;
   min-width: 150px;
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
@@ -125,25 +126,25 @@ body {
             transform: rotate(270deg);
     top: 100px;
     left: -45px; }
-  .site-header .shuttle-circle {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    background-color: #fd746c;
-    color: #FFF;
-    -webkit-transform: rotate(-90deg);
-            transform: rotate(-90deg);
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
-    z-index: -1;
-    text-shadow: 0 1px #ccc, 0 2px #b7b7b7, 0 3px #a3a3a3, 0 4px #8e8e8e, 0 5px #7a7a7a, 0 6px 1px rgba(0, 0, 0, 0.3); }
+
+.shuttle-circle {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #99502F;
+  color: #FFF;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  text-shadow: 0 1px #ccc, 0 2px #b7b7b7, 0 3px #a3a3a3, 0 4px #8e8e8e, 0 5px #7a7a7a, 0 6px 1px rgba(0, 0, 0, 0.3); }
 
 /*    <Quiz Body Styles>    */
 .quiz-window {
@@ -156,8 +157,15 @@ body {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: linear-gradient(to right, #fd746c, #ff9068);
   height: 100vh; }
+
+.welcome {
+  background: url("../images/planet-mars.jpg") no-repeat center center;
+  background-size: cover; }
+
+.questions {
+  background: url("../images/mars-sunrise.jpg") no-repeat left top;
+  background-size: cover; }
 
 .quiz-timer {
   display: -webkit-flex;
@@ -188,7 +196,9 @@ body {
 .quiz-box {
   background-color: #FFF;
   width: 80%;
-  padding: 1rem; }
+  padding: 1rem;
+  border: 2px solid #FFF;
+  border-radius: 3px; }
   .quiz-box p {
     font-size: 1.5rem; }
   .quiz-box input {
@@ -201,3 +211,35 @@ body {
     outline: none; }
   .quiz-box button {
     float: right; }
+
+/*    <Quiz Results Styles>    */
+@-webkit-keyframes text-flash {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; } }
+@keyframes text-flash {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; } }
+
+.accepted {
+  background: url("../images/mars-colony.jpg") no-repeat center center;
+  background-size: cover; }
+
+.rejected {
+  background: url("../images/crashed-spaceship.jpg") no-repeat center center;
+  background-size: cover; }
+
+.lost {
+  background: url("../images/lost-in-space.png") no-repeat center center;
+  background-size: cover; }
+
+h2 {
+  color: #FFF;
+  font-size: 7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  -webkit-animation: text-flash 1.5s infinite;
+          animation: text-flash 1.5s infinite; }

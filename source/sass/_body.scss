@@ -4,8 +4,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to right, #fd746c, #ff9068);
   height: 100vh;
+}
+
+.welcome {
+  background: url('../images/planet-mars.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.questions {
+  background: url('../images/mars-sunrise.jpg') no-repeat left top;
+  background-size: cover;
 }
 
 .quiz-timer {
@@ -39,6 +48,8 @@
   background-color: #FFF;
   width: 80%;
   padding: 1rem;
+  border: 2px solid #FFF;
+  border-radius: 3px;
 
   p {
     font-size: 1.5rem;

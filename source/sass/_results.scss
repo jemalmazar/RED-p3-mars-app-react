@@ -1,0 +1,29 @@
+/*    <Quiz Results Styles>    */
+
+@keyframes text-flash {
+  0% { opacity: 1}
+  50% { opacity: 0 }
+}
+
+.accepted {
+  background: url('../images/mars-colony.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.rejected {
+  background: url('../images/crashed-spaceship.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.lost {
+  background: url('../images/lost-in-space.png') no-repeat center center;
+  background-size: cover;
+}
+
+h2 {
+  color: #FFF;
+  font-size: 7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  animation: text-flash 1.5s infinite;
+}
