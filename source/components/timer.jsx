@@ -34,7 +34,7 @@ var Timer = React.createClass({
   _tick: function() {
     // takes the secondsElapsed state and decreases that number by one every time this method gets called
     this.setState( { secondsElapsed: this.state.secondsElapsed - 1 } );
-
+    // pushes the user to the rejected screen a second after timer runs out
     if (this.state.secondsElapsed === -1) {
       browserHistory.push('/rejected');
     }
@@ -48,6 +48,7 @@ var Timer = React.createClass({
   },
 
   componentWillReceiveProps: function(nextProps) {
+    // receives the startHandler prop from Timer component in Question
     if ( nextProps.startHandler === true ) {
       this._startTimer();
     } else {

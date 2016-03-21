@@ -33,6 +33,7 @@ var Question = React.createClass({
   },
 
   _toggleDisplay: function(isDisplayed) {
+    // adds the "hidden" class based on if the start state is true or false; that boolean value is passed in the render function
     if ( this.state.start !== isDisplayed) {
       return "hidden";
     } else {
@@ -41,10 +42,12 @@ var Question = React.createClass({
   },
 
   _startQuizHandler: function() {
+    // changes the start state when the button is clicked
     this.setState({ start: true });
   },
 
   _questionDisplay: function() {
+    // displays the question based on the value of the questionIndex state
     return (
       <span>{ questionList[this.state.questionIndex].question }</span>
     );
@@ -52,12 +55,16 @@ var Question = React.createClass({
 
   _handleSubmit: function(e) {
     e.preventDefault();
+    // increases the questionIndex state when the user submits
     this.setState({ questionIndex: this.state.questionIndex + 1 });
+    // runs the method that checks user answers
     this._evaluateUserInput();
   },
 
   _evaluateUserInput: function() {
+    // checks the user's input against the answer property's value
     if ( this.refs.userInput.value.toLowerCase() === questionList[this.state.questionIndex].answer.toLowerCase() ) {
+      // increases the correctAnswers state should the answers match
       this.setState({ correctAnswers: this.state.correctAnswers + 1 })
     };
     // clears the input field on user submission
@@ -66,6 +73,7 @@ var Question = React.createClass({
   },
 
   _evaluateQuiz: function() {
+    // checks if all the questions were answered correctly and pushes user to appropriate page
     if ( this.state.correctAnswers === 3 ) {
       browserHistory.push('/accepted');
     } else {
@@ -74,6 +82,7 @@ var Question = React.createClass({
   },
 
   componentDidUpdate: function() {
+    // grades the quiz once the last question has been answered
     if ( this.state.questionIndex > 3 ) {
       this._evaluateQuiz();
     };
