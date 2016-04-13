@@ -1,5 +1,7 @@
 # RED Academy Project 3 - Mars Quiz App
 
+View the deployed web application at: https://mars-trivia.firebaseapp.com
+
 **Project Description**
 
 A single-page application that tests users on Mars-based trivia.
